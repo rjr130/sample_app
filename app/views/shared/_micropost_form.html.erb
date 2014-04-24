@@ -1,0 +1,28 @@
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<script type="text/javascript">
+<!--
+     
+ $(function () {
+    $('textarea.limited').maxlength({
+        'feedback' : '.charsLeft' // note: looks within the current form
+    });
+      
+    $('input.limited').maxlength({
+        'feedback' : '.charsLeft' // note: looks within the current form
+    });
+       
+    $('textarea.wordLimited').maxlength({
+       'words': true,
+       'feedback': '.wordsLeft'
+    });
+ });
+     
+//-->
+</script>
